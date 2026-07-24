@@ -1,0 +1,227 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #10151f;
+    color: #f7f1df;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 5%;
+    background: #182331;
+    border-bottom: 2px solid #e7a23b;
+}
+
+.brand {
+    font-size: 28px;
+    font-weight: 900;
+    color: #f39b3d;
+}
+
+.topbar nav {
+    display: flex;
+    gap: 20px;
+}
+
+.page-container {
+    width: min(1200px, 92%);
+    margin: 40px auto;
+}
+
+.gateway {
+    min-height: 75vh;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    background: radial-gradient(circle, #33445c, #10151f 65%);
+    border-radius: 24px;
+}
+
+.gateway h1 {
+    font-size: clamp(50px, 10vw, 110px);
+    color: #f39b3d;
+    margin: 0;
+}
+
+.gateway p {
+    font-size: 24px;
+    letter-spacing: 5px;
+}
+
+.gateway-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    border: 0;
+    border-radius: 10px;
+    padding: 13px 22px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+.primary { background: #e7a23b; color: #151515; }
+.secondary { background: #4c9de8; color: white; }
+.danger { background: #d95c58; color: white; }
+
+.auth-card {
+    max-width: 450px;
+    margin: 80px auto;
+    padding: 35px;
+    background: #1c2938;
+    border: 1px solid #60758b;
+    border-radius: 18px;
+}
+
+.auth-card form {
+    display: grid;
+    gap: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #66788a;
+    background: #10151f;
+    color: white;
+}
+
+.hub-header, .section-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.map-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 40px;
+}
+
+.vendor-card, .category-card, .product-card, .stat-card, .report-card, .scanner-card {
+    background: #1c2938;
+    border: 1px solid #526b83;
+    border-radius: 18px;
+    padding: 24px;
+    transition: transform .2s, border-color .2s;
+}
+
+.vendor-card:hover, .category-card:hover, .product-card:hover {
+    transform: translateY(-8px);
+    border-color: #f2b14c;
+}
+
+.vendor-icon {
+    font-size: 65px;
+}
+
+.vendor-card span {
+    color: #f2b14c;
+    font-weight: bold;
+}
+
+.vendor-hero {
+    padding: 45px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #273b53, #1a2330);
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.product-image {
+    height: 160px;
+    display: grid;
+    place-items: center;
+    background: #111923;
+    border-radius: 12px;
+    font-size: 60px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cart-row, .ticket-row, .report-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 18px;
+    margin: 10px 0;
+    background: #1c2938;
+    border-radius: 10px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.ticket {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px;
+    text-align: center;
+    background: white;
+    color: #111;
+    border-radius: 20px;
+}
+
+#qr-placeholder {
+    width: 200px;
+    height: 200px;
+    margin: 25px auto;
+    display: grid;
+    place-items: center;
+    background: repeating-linear-gradient(45deg, #111 0 8px, white 8px 16px);
+    color: white;
+    font-weight: bold;
+}
+
+.message {
+    padding: 15px;
+    background: #284f3b;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+    .map-grid, .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .map-grid, .product-grid, .category-grid, .stats-grid { grid-template-columns: 1fr; }
+}

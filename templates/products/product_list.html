@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="section-heading">
+    <h1>{{ vendor.name }} — {{ category_name|title }}</h1>
+    <a class="btn primary" href="{% url 'cart' %}">🛒 View Cart</a>
+</div>
+
+<div class="product-grid">
+    {% for product in products %}
+    <div class="product-card">
+        <div class="product-image">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            {% else %}
+                🍔
+            {% endif %}
+        </div>
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <p>₹{{ product.price }}</p>
+        <small>Purchased this week: {{ product.weekly_purchased_count }}</small>
+        <a class="btn primary" href="{% url 'add_to_cart' product.id %}">PLACE ORDER</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Your Adventurer's Backpack 🛒</h1>
+{% for item in items %}
+<div class="cart-row">
+    <span>{{ item.product.name }}</span>
+    <span>₹{{ item.product.price }} × {{ item.quantity }}</span>
+    <form method="post" action="{% url 'update_cart' item.id %}">
+        {% csrf_token %}
+        <input type="number" name="quantity" min="1" value="{{ item.quantity }}">
+        <button>Update</button>
+    </form>
+    <a href="{% url 'remove_from_cart' item.id %}">Remove</a>
+</div>
+{% empty %}
+<p>Your cart is empty.</p>
+{% endfor %}
+<h2>Total: ₹{{ total }}</h2>
+{% if items %}
+<a class="btn secondary" href="{% url 'checkout' %}">GENERATE ORDER TICKET</a>
+{% endif %}
+{% endblock %}

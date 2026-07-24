@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="hub-header">
+    <div>
+        <h1>Welcome To ByteBites</h1>
+        <p>Choose your next campus quest, {{ user.username }}!</p>
+    </div>
+    <div class="role-action">
+        {% if user.is_staff or user.profile.role == 'ADMIN' %}
+            <a class="btn danger" href="{% url 'admin_panel' %}">⚔ Admin Panel</a>
+        {% elif user.profile.role == 'EMPLOYEE' %}
+            <a class="btn secondary" href="{% url 'ticket_center' %}">🎟 Ticket Center</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="map-grid">
+    {% for vendor in vendors %}
+    <a href="{% url 'vendor_detail' vendor.slug %}" class="vendor-card">
+        <div class="vendor-icon">🏰</div>
+        <h2>{{ vendor.name }}</h2>
+        <p>{{ vendor.description }}</p>
+        <span>ENTER QUEST →</span>
+    </a>
+    {% empty %}
+    <p>No vendors added yet. Use Django Admin to add Royal Kitchen, Mario, Campus Kitchen and Tasty Time.</p>
+    {% endfor %}
+</div>
+{% endblock %}

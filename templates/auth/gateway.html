@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="gateway">
+    <h1>BYTEBITES</h1>
+    <p>THE CAMPUS QUEST</p>
+    <div class="gateway-actions">
+        <a class="btn primary" href="{% url 'login' %}">Legacy Login</a>
+        <a class="btn secondary" href="{% url 'signup' %}">New Hero Signup</a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="ticket">
+    <h1>ORDER COMPLETED</h1>
+    <h2>FINAL BOSS DEFEATED 🎉</h2>
+    <p>Ticket Number</p>
+    <strong>{{ order.ticket_number }}</strong>
+    <div id="qr-placeholder">QR CODE</div>
+    <p>Total: ₹{{ order.total_amount }}</p>
+    <p>Status: {{ order.status }}</p>
+</div>
+{% endblock %}

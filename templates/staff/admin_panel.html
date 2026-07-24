@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>⚔ ADMIN DUNGEON</h1>
+<div class="stats-grid">
+    <div class="stat-card"><h2>₹{{ total_revenue }}</h2><p>Revenue</p></div>
+    <div class="stat-card"><h2>{{ total_orders }}</h2><p>Total Orders</p></div>
+</div>
+<div class="report-card">
+    <h2>Demanding Food Items</h2>
+    {% for product in top_products %}
+    <div class="report-row">
+        <span>{{ product.name }}</span>
+        <strong>{{ product.weekly_purchased_count }} purchases</strong>
+    </div>
+    {% endfor %}
+</div>
+<p>Charts for weekly revenue, monthly revenue and weekly demand can be added here using JavaScript chart rendering.</p>
+{% endblock %}

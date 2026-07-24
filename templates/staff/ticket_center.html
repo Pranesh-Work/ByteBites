@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="section-heading">
+    <h1>🎟 EMPLOYEE QUEST TOWER</h1>
+    <a class="btn primary" href="{% url 'logout' %}">Logout</a>
+</div>
+
+<div class="scanner-card">
+    <h2>QR Scanner</h2>
+    <p>Use the camera scanner UI here or enter the ticket number below.</p>
+    <form method="post" action="{% url 'scan_ticket' %}">
+        {% csrf_token %}
+        <input name="ticket_number" placeholder="Enter Ticket Number" required>
+        <button class="btn secondary">COMPLETE TICKET</button>
+    </form>
+</div>
+
+<h2>Last 10 Ticket Numbers</h2>
+<div class="ticket-list">
+    {% for ticket in tickets %}
+    <div class="ticket-row">
+        <span>{{ ticket.ticket_number }}</span>
+        <span>{{ ticket.status }}</span>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
