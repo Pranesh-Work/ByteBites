@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.db.models import Sum, Count
 from django.utils import timezone
-from .models import Profile, Vendor, Product, CartItem, Order, OrderItem, TicketScan
+from .models import Profile, Vendor, Product, Cart, CartItem, Order, OrderItem, TicketScan
 
 def auth_gateway(request):
     return render(request, "auth/gateway.html")
@@ -61,40 +61,95 @@ def product_list(request, vendor_slug, category_name):
 
 @login_required
 def add_to_cart(request, product_id):
+
     product = get_object_or_404(Product, id=product_id)
-    item, created = CartItem.objects.get_or_create(user=request.user, product=product)
+
+    cart, created = Cart.objects.get_or_create(user=request.user)
+
+    item, created = CartItem.objects.get_or_create(
+        cart=cart,
+        product=product,
+    )
+
     if not created:
         item.quantity += 1
         item.save()
+
     return redirect(request.META.get("HTTP_REFERER", "hub"))
 
 @login_required
 def cart(request):
-    items = CartItem.objects.filter(user=request.user)
+    cart, created = Cart.objects.get_or_create(user=request.user)
+
+    items = cart.items.all()
+
     total = sum(item.total_price for item in items)
-    return render(request, "cart.html", {"items": items, "total": total})
+
+    return render(
+        request,
+        "cart.html",
+        {
+            "cart": cart,
+            "items": items,
+            "total": total,
+        },
+    )
 
 @login_required
 def update_cart(request, item_id):
-    item = get_object_or_404(CartItem, id=item_id, user=request.user)
-    item.quantity = max(1, int(request.POST.get("quantity", 1)))
+
+    cart = get_object_or_404(Cart, user=request.user)
+
+    item = get_object_or_404(
+        CartItem,
+        id=item_id,
+        cart=cart,
+    )
+
+    item.quantity = max(
+        1,
+        int(request.POST.get("quantity", 1))
+    )
+
     item.save()
+
     return redirect("cart")
+
+
 
 @login_required
 def remove_from_cart(request, item_id):
-    item = get_object_or_404(CartItem, id=item_id, user=request.user)
+
+    cart = get_object_or_404(Cart, user=request.user)
+
+    item = get_object_or_404(
+        CartItem,
+        id=item_id,
+        cart=cart,
+    )
+
     item.delete()
+
     return redirect("cart")
+
+
 
 @login_required
 def checkout(request):
-    items = CartItem.objects.filter(user=request.user)
+
+    cart, created = Cart.objects.get_or_create(user=request.user)
+
+    items = cart.items.all()
+
     if not items.exists():
         return redirect("cart")
 
     total = sum(item.total_price for item in items)
-    ticket_number = f"BB-{timezone.now().strftime('%Y%m%d%H%M%S')}-{request.user.id}"
+
+    ticket_number = (
+        f"BB-{timezone.now().strftime('%Y%m%d%H%M%S')}-{request.user.id}"
+    )
+
     order = Order.objects.create(
         user=request.user,
         ticket_number=ticket_number,
@@ -102,16 +157,19 @@ def checkout(request):
     )
 
     for item in items:
+
         OrderItem.objects.create(
             order=order,
             product=item.product,
             quantity=item.quantity,
             price_at_order=item.product.price,
         )
+
         item.product.weekly_purchased_count += item.quantity
         item.product.save()
 
     items.delete()
+
     return redirect("ticket", ticket_number=order.ticket_number)
 
 @login_required
