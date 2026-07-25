@@ -1,7 +1,7 @@
-vendor,category,slug
-Royal Kitchen,Food,food
-Royal Kitchen,Snacks,snacks
-Mario,Snacks,snacks
-Mario,Juice,juice
-Campus Kitchen,Food,food
-Tasty Time,Food,food
+vendor,category
+Royal Kitchen,FOOD
+Royal Kitchen,SNACKS
+Mario,SNACKS
+Mario,JUICE
+Campus Kitchen,FOOD
+Tasty Time,FOOD

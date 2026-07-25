@@ -1,5 +1,5 @@
-name,slug,description,venue,min_price,max_price
-Royal Kitchen,royal-kitchen,Main college canteen,Ground Floor Food Court,20,250
-Mario,mario,Fast food outlet,Food Court Counter 2,40,350
-Campus Kitchen,campus-kitchen,Student meals cafeteria,Academic Block,30,300
-Tasty Time,tasty-time,Snacks and beverages,Student Activity Center,15,200
+name,slug,description,venue,minimum_price,maximum_price,opening_time,closing_time,estimated_wait,rating,is_active
+Royal Kitchen,royal-kitchen,Main college canteen,Ground Floor Food Court,20,250,08:00:00,18:00:00,10,4.5,True
+Mario,mario,Fast food outlet,Food Court Counter 2,40,350,09:00:00,19:00:00,8,4.4,True
+Campus Kitchen,campus-kitchen,Student meals cafeteria,Academic Block,30,300,08:30:00,17:30:00,12,4.3,True
+Tasty Time,tasty-time,Snacks and beverages,Student Activity Center,15,200,09:00:00,18:00:00,7,4.6,True

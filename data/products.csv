@@ -1,0 +1,21 @@
+vendor,category,name,slug,description,price,is_veg,preparation_time,calories,is_popular,is_available
+Royal Kitchen,FOOD,Veg Meals,veg-meals,Traditional South Indian meal,90,True,10,650,True,True
+Royal Kitchen,FOOD,Mini Meals,mini-meals,Mini vegetarian meal,70,True,8,500,False,True
+Royal Kitchen,FOOD,Chicken Biryani,chicken-biryani,Dum cooked chicken biryani,140,False,15,850,True,True
+Royal Kitchen,FOOD,Veg Fried Rice,veg-fried-rice,Vegetable fried rice,90,True,12,600,False,True
+Royal Kitchen,FOOD,Egg Fried Rice,egg-fried-rice,Egg fried rice,110,False,12,680,True,True
+Royal Kitchen,FOOD,Chicken Fried Rice,chicken-fried-rice,Chicken fried rice,130,False,15,760,True,True
+Royal Kitchen,FOOD,Veg Noodles,veg-noodles,Vegetable noodles,80,True,10,550,False,True
+Royal Kitchen,FOOD,Chicken Noodles,chicken-noodles,Chicken noodles,120,False,12,720,True,True
+Royal Kitchen,SNACKS,Samosa,samosa,Crispy potato samosa,20,True,5,180,True,True
+Royal Kitchen,SNACKS,Veg Puff,veg-puff,Vegetable puff pastry,25,True,5,220,False,True
+Mario,SNACKS,French Fries,french-fries,Crispy fries,80,True,8,420,True,True
+Mario,SNACKS,Veg Sandwich,veg-sandwich,Grilled vegetable sandwich,70,True,8,350,False,True
+Mario,JUICE,Mango Juice,mango-juice,Fresh mango juice,60,True,3,160,True,True
+Mario,JUICE,Orange Juice,orange-juice,Fresh orange juice,55,True,3,140,False,True
+Campus Kitchen,FOOD,South Indian Meals,south-indian-meals,Complete meals,100,True,10,700,True,True
+Campus Kitchen,FOOD,Lemon Rice,lemon-rice,Lemon flavored rice,70,True,8,500,False,True
+Campus Kitchen,FOOD,Curd Rice,curd-rice,Curd rice,60,True,6,420,False,True
+Tasty Time,FOOD,Paneer Fried Rice,paneer-fried-rice,Paneer fried rice,120,True,12,650,True,True
+Tasty Time,FOOD,Mushroom Noodles,mushroom-noodles,Mushroom noodles,110,True,10,620,False,True
+Tasty Time,FOOD,Gobi Manchurian,gobi-manchurian,Crispy gobi manchurian,90,True,10,480,True,True
