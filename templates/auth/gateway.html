@@ -1,11 +1,69 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/gateway.css' %}">
+{% endblock %}
+
 {% block content %}
-<section class="gateway">
-    <h1>BYTEBITES</h1>
-    <p>THE CAMPUS QUEST</p>
-    <div class="gateway-actions">
-        <a class="btn primary" href="{% url 'login' %}">Legacy Login</a>
-        <a class="btn secondary" href="{% url 'signup' %}">New Hero Signup</a>
-    </div>
+
+<section class="gateway-page">
+
+<div class="overlay"></div>
+
+<header class="hero">
+
+<img src="{% static 'images/auth/logo.webp' %}" class="logo">
+
+<h2>THE CAMPUS QUEST MAP</h2>
+
+</header>
+
+
+<div class="gateway-map">
+
+<!-- LEFT -->
+
+<a href="{% url 'login' %}" class="portal legacy">
+
+<div class="portal-title">
+
+LEGACY LOGIN
+
+</div>
+
+<img src="{% static 'images/auth/stone-door.webp' %}"
+     alt="Stone Door">
+
+</a>
+
+
+<!-- CENTER -->
+
+<div class="magic-core">
+
+<div class="magic-circle"></div>
+
+</div>
+
+
+<!-- RIGHT -->
+
+<a href="{% url 'signup' %}" class="portal signup">
+
+<div class="portal-title">
+
+NEW HERO SIGNUP
+
+</div>
+
+<img src="{% static 'images/auth/golden-crystal.webp' %}"
+     alt="Golden Crystal">
+
+</a>
+
+</div>
+
 </section>
+
 {% endblock %}
