@@ -1,0 +1,159 @@
+/* ===========================================
+   Authentication Shared Styles
+=========================================== */
+
+body.auth-page {
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(16, 21, 31, 0.75),
+            rgba(16, 21, 31, 0.75)
+        ),
+        url("../images/auth/gateway-bg.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.auth-card {
+
+    width: min(450px, 92%);
+    margin: 80px auto;
+    padding: 35px;
+
+    background: rgba(28, 41, 56, 0.92);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 20px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.45);
+
+}
+
+.auth-card h1 {
+
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+.auth-card form {
+
+    display: grid;
+    gap: 16px;
+
+}
+
+.auth-card p {
+
+    text-align: center;
+    margin-top: 25px;
+
+}
+
+/* ===========================================
+   Authentication Branding
+=========================================== */
+
+.auth-logo{
+    text-align:center;
+    font-size:34px;
+    font-weight:800;
+    color:#f3a73b;
+    margin-bottom:18px;
+    letter-spacing:1px;
+}
+
+.auth-subtitle{
+    text-align:center;
+    color:#c8d2dc;
+    font-size:15px;
+    margin-top:-10px;
+    margin-bottom:30px;
+    line-height:1.6;
+}
+
+/* ===========================================
+   Authentication Links
+=========================================== */
+
+.auth-links{
+    margin-top:18px;
+    text-align:center;
+}
+
+.auth-links a{
+    color:#f3a73b;
+    font-size:14px;
+    transition:.3s;
+}
+
+.auth-links a:hover{
+    color:#ffffff;
+}
+
+/* ===========================================
+   Switch Login / Signup
+=========================================== */
+
+.switch-auth{
+    text-align:center;
+    margin-top:30px;
+    color:#d7d7d7;
+}
+
+.switch-auth a{
+    color:#f3a73b;
+    font-weight:700;
+    transition:.3s;
+}
+
+.switch-auth a:hover{
+    color:white;
+}
+
+/* ===========================================
+   Better Button
+=========================================== */
+
+.auth-card .btn{
+    width:100%;
+    padding:15px;
+    font-size:16px;
+    border-radius:10px;
+    transition:.25s ease;
+}
+
+.auth-card .btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 25px rgba(0,0,0,.35);
+}
+
+/* ===========================================
+   Better Inputs
+=========================================== */
+
+.auth-card input{
+
+    transition:.25s ease;
+
+}
+
+.auth-card input:focus{
+
+    outline:none;
+
+    border-color:#f3a73b;
+
+    box-shadow:0 0 0 3px rgba(243,167,59,.20);
+
+}

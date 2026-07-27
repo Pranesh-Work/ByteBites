@@ -1,10 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block body_class %}signup-page{% endblock %}
+
+{% block page_css %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}">
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock %}
+{% endblock %}
 
 {% block content %}
 
 <div class="auth-card">
 
-    <h1>New Hero Signup</h1>
+    <h1>🍔 ByteBites</h1>
+
+    <h2>Create Account</h2>
+
+    <p>Join ByteBites and start your food adventure.</p>
 
     <form method="post">
 
@@ -20,7 +35,7 @@
         <input
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder="Email Address"
             required
         >
 
@@ -38,13 +53,13 @@
             required
         >
 
-        <button type="submit" class="btn secondary">
-            SIGN UP
+        <button class="btn secondary">
+            CREATE ACCOUNT
         </button>
 
     </form>
 
-    <p>
+    <p style="margin-top:25px; text-align:center;">
         Already have an account?
         <a href="{% url 'login' %}">
             Login

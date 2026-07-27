@@ -1,0 +1,143 @@
+/* ===========================================
+   Signup Page
+=========================================== */
+
+/* ===========================================
+   ByteBites Signup Page
+=========================================== */
+
+.signup-page {
+    background:
+        linear-gradient(rgba(0,0,0,.60), rgba(0,0,0,.60)),
+        url("../images/auth/gateway-bg.webp") center center/cover no-repeat;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-page .auth-card{
+
+    background: rgba(28,41,56,.88);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45);
+
+    animation: fadeUp .8s ease;
+
+    transition:.35s ease;
+}
+
+.signup-page .auth-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.signup-page .auth-card h1{
+
+    font-size:2.7rem;
+
+    margin-bottom:12px;
+
+}
+
+.signup-page .auth-card p{
+
+    color:#c9d2dc;
+
+}
+
+.signup-page input{
+
+    transition:.3s;
+
+}
+
+.signup-page input:focus{
+
+    outline:none;
+
+    border-color:#F3A93A;
+
+    box-shadow:
+        0 0 0 4px rgba(243,169,58,.18);
+
+}
+
+.signup-page .btn{
+
+    width:100%;
+
+    padding:15px;
+
+    font-size:18px;
+
+    background:linear-gradient(
+        135deg,
+        #4fa7ff,
+        #2b74d8
+    );
+
+    color:white;
+
+    box-shadow:
+        0 10px 25px rgba(60,130,255,.35);
+
+    transition:.3s;
+
+}
+
+.signup-page .btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 16px 35px rgba(60,130,255,.55);
+
+}
+
+.signup-page a{
+
+    color:#F3A93A;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.signup-page a:hover{
+
+    color:#ffd27a;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
