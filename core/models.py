@@ -12,6 +12,7 @@ class Profile(models.Model):
         choices=[
             ("STUDENT", "Student"),
             ("VENDOR", "Vendor"),
+            ("EMPLOYEE", "Employee"),
             ("ADMIN", "Admin"),
         ],
         default="STUDENT",

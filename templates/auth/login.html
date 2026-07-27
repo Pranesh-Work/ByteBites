@@ -1,13 +1,42 @@
 {% extends 'base.html' %}
+
 {% block content %}
+
 <div class="auth-card">
-    <h1>Welcome Back, Hero</h1>
+
+    <h1>Welcome Back</h1>
+
     <form method="post">
+
         {% csrf_token %}
-        <input name="username" placeholder="Username" required>
-        <input name="password" type="password" placeholder="Password" required>
-        <button class="btn primary">LOGIN</button>
+
+        <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            required
+        >
+
+        <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+        >
+
+        <button type="submit" class="btn primary">
+            LOGIN
+        </button>
+
     </form>
-    <p>New hero? <a href="{% url 'signup' %}">Create an account</a></p>
+
+    <p>
+        New to ByteBites?
+        <a href="{% url 'signup' %}">
+            Create an account
+        </a>
+    </p>
+
 </div>
+
 {% endblock %}

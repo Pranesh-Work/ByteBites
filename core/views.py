@@ -6,37 +6,178 @@ from django.contrib import messages
 from django.db.models import Sum, Count
 from django.utils import timezone
 from .models import Profile, Vendor, Product, Cart, CartItem, Order, OrderItem, TicketScan
+from django.contrib.auth.password_validation import validate_password
+from django.core.exceptions import ValidationError
 
 def auth_gateway(request):
     return render(request, "auth/gateway.html")
 
+def redirect_user_by_role(user):
+    """
+    Redirect users based on their assigned role.
+    """
+
+    if user.is_superuser or user.is_staff:
+        return redirect("admin_panel")
+
+    profile = getattr(user, "profile", None)
+
+    if not profile:
+        return redirect("hub")
+
+    role = profile.role
+
+    if role == "ADMIN":
+        return redirect("admin_panel")
+
+    elif role == "EMPLOYEE":
+        return redirect("ticket_center")
+
+    elif role == "VENDOR":
+        # Vendor dashboard will be implemented later.
+        return redirect("hub")
+
+    return redirect("hub")
+
+
 def login_view(request):
+
+    if request.user.is_authenticated:
+        return redirect_user_by_role(request.user)
+
     if request.method == "POST":
-        username = request.POST.get("username")
-        password = request.POST.get("password")
-        user = authenticate(request, username=username, password=password)
-        if user:
-            login(request, user)
-            return redirect("hub")
-        messages.error(request, "Invalid username or password.")
+
+        username = request.POST.get("username", "").strip()
+        password = request.POST.get("password", "")
+
+        if not username or not password:
+            messages.error(request, "Please enter both username and password.")
+            return render(request, "auth/login.html")
+
+        user = authenticate(
+            request,
+            username=username,
+            password=password,
+        )
+
+        if user is None:
+            messages.error(request, "Invalid username or password.")
+            return render(request, "auth/login.html")
+
+        if not user.is_active:
+            messages.error(request, "This account has been deactivated.")
+            return render(request, "auth/login.html")
+
+        login(request, user)
+
+        messages.success(
+            request,
+            f"Welcome back, {user.username}!"
+        )
+
+        return redirect_user_by_role(user)
+
     return render(request, "auth/login.html")
 
 def signup_view(request):
+
+    if request.user.is_authenticated:
+        return redirect_user_by_role(request.user)
+
     if request.method == "POST":
-        username = request.POST.get("username")
-        email = request.POST.get("email")
-        password = request.POST.get("password")
-        if User.objects.filter(username=username).exists():
+
+        username = request.POST.get("username", "").strip()
+        email = request.POST.get("email", "").strip().lower()
+        password = request.POST.get("password", "")
+        confirm_password = request.POST.get("confirm_password", "")
+
+        # ----------------------------
+        # Required Fields
+        # ----------------------------
+
+        if not username or not email or not password or not confirm_password:
+            messages.error(request, "All fields are required.")
+            return render(request, "auth/signup.html")
+
+        # ----------------------------
+        # Username
+        # ----------------------------
+
+        if User.objects.filter(username__iexact=username).exists():
             messages.error(request, "Username already exists.")
-        else:
-            user = User.objects.create_user(username=username, email=email, password=password)
-            Profile.objects.create(user=user, role="USER")
-            login(request, user)
-            return redirect("hub")
+            return render(request, "auth/signup.html")
+
+        # ----------------------------
+        # Email
+        # ----------------------------
+
+        if User.objects.filter(email__iexact=email).exists():
+            messages.error(request, "Email is already registered.")
+            return render(request, "auth/signup.html")
+
+        # ----------------------------
+        # Password Match
+        # ----------------------------
+
+        if password != confirm_password:
+            messages.error(request, "Passwords do not match.")
+            return render(request, "auth/signup.html")
+
+        # ----------------------------
+        # Django Password Validation
+        # ----------------------------
+
+        temp_user = User(
+            username=username,
+            email=email,
+        )
+
+        try:
+            validate_password(password, temp_user)
+
+        except ValidationError as e:
+
+            for error in e.messages:
+                messages.error(request, error)
+
+            return render(request, "auth/signup.html")
+
+        # ----------------------------
+        # Create User
+        # ----------------------------
+
+        user = User.objects.create_user(
+            username=username,
+            email=email,
+            password=password,
+        )
+
+        Profile.objects.create(
+            user=user,
+            role="STUDENT",
+        )
+
+        login(request, user)
+
+        messages.success(
+            request,
+            "Account created successfully. Welcome to ByteBites!"
+        )
+
+        return redirect_user_by_role(user)
+
     return render(request, "auth/signup.html")
 
+@login_required
 def logout_view(request):
+
     logout(request)
+
+    messages.success(
+        request,
+        "You have been logged out successfully."
+    )
+
     return redirect("auth_gateway")
 
 @login_required
