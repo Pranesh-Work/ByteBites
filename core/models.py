@@ -53,7 +53,7 @@ class Vendor(models.Model):
 
     estimated_wait = models.IntegerField(default=10)
 
-    image = models.ImageField(upload_to="vendors/")
+    image = models.ImageField(upload_to="static/images/vendors/campus-kitchen/logo.webp")
 
     is_active = models.BooleanField(default=True)
 

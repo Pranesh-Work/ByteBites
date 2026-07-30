@@ -4,11 +4,9 @@
 
 {% block page_css %}
 
-<link rel="stylesheet"
-      href="{% static 'css/auth.css' %}">
+<link rel="stylesheet" href="{% static 'css/auth/auth.css' %}">
 
-<link rel="stylesheet"
-      href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/auth/login.css' %}">
 
 {% endblock %}
 
@@ -32,18 +30,9 @@
 
         {% csrf_token %}
 
-        <input
-            name="username"
-            placeholder="Username"
-            required
-        >
+        <input name="username" placeholder="Username" required>
 
-        <input
-            name="password"
-            type="password"
-            placeholder="Password"
-            required
-        >
+        <input name="password" type="password" placeholder="Password" required>
 
         <button class="btn primary">
             LOGIN

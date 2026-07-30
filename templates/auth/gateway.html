@@ -2,67 +2,104 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/gateway.css' %}">
+<link rel="stylesheet" href="{% static 'css/gateway/gateway.css' %}">
 {% endblock %}
 
 {% block content %}
 
 <section class="gateway-page">
 
-<div class="overlay"></div>
+     <!-- ==========================================
+         Background Layer
+    =========================================== -->
+     <div class="gateway-bg" style="--gateway-bg:url('{% static 'images/backgrounds/gateway-bg.webp' %}');">
+     </div>
+     <!-- ==========================================
+         Dark Overlay
+    =========================================== -->
 
-<header class="hero">
+     <div class="overlay"></div>
 
-<img src="{% static 'images/auth/logo.webp' %}" class="logo">
+     <!-- ==========================================
+         Future Visual Effects
+    =========================================== -->
 
-<h2>THE CAMPUS QUEST MAP</h2>
+     <div class="fog fog-left"></div>
+     <div class="fog fog-right"></div>
 
-</header>
+     <div class="particles"></div>
 
+     <!-- ==========================================
+         Main Content
+    =========================================== -->
 
-<div class="gateway-map">
+     <div class="gateway-content">
 
-<!-- LEFT -->
+          <!-- Hero -->
 
-<a href="{% url 'login' %}" class="portal legacy">
+          <header class="hero">
 
-<div class="portal-title">
+               <img src="{% static 'images/auth/logo.webp' %}" alt="ByteBites Logo" class="logo">
 
-LEGACY LOGIN
+               <h2>
+                    THE CAMPUS QUEST MAP
+               </h2>
 
-</div>
+               <p class="hero-subtitle">
+                    Choose your destiny and begin your ByteBites adventure.
+               </p>
 
-<img src="{% static 'images/auth/stone-door.webp' %}"
-     alt="Stone Door">
+          </header>
 
-</a>
+          <!-- Main Gateway -->
 
+          <div class="gateway-map">
 
-<!-- CENTER -->
+               <!-- Login Portal -->
 
-<div class="magic-core">
+               <a href="{% url 'login' %}" class="portal legacy">
 
-<div class="magic-circle"></div>
+                    <div class="portal-title">
 
-</div>
+                         LEGACY LOGIN
 
+                    </div>
 
-<!-- RIGHT -->
+                    <img src="{% static 'images/auth/stone-door.webp' %}" alt="Stone Door">
 
-<a href="{% url 'signup' %}" class="portal signup">
+               </a>
 
-<div class="portal-title">
+               <!-- Magic Core -->
 
-NEW HERO SIGNUP
+               <div class="magic-core">
 
-</div>
+                    <div class="magic-ring ring-1"></div>
 
-<img src="{% static 'images/auth/golden-crystal.webp' %}"
-     alt="Golden Crystal">
+                    <div class="magic-ring ring-2"></div>
 
-</a>
+                    <div class="magic-circle"></div>
 
-</div>
+                    <div class="magic-glow"></div>
+
+               </div>
+
+               <!-- Signup Portal -->
+
+               <a href="{% url 'signup' %}" class="portal signup">
+
+                    <div class="portal-title">
+
+                         NEW HERO SIGNUP
+
+                    </div>
+
+                    <img src="{% static 'images/auth/golden-crystal.webp' %}" alt="Golden Crystal">
+
+               </a>
+
+          </div>
+
+     </div>
 
 </section>
 

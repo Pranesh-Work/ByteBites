@@ -1,0 +1,124 @@
+/* ==========================================
+   Gateway Layout
+========================================== */
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Orbitron, sans-serif;
+    background: #08131d;
+}
+
+.gateway-page {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+
+    overflow: hidden;
+
+}
+
+/* ------------------------------
+   Background
+------------------------------ */
+
+.gateway-bg {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image: var(--gateway-bg);
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    z-index: 0;
+
+}
+
+/* ------------------------------
+   Overlay
+------------------------------ */
+
+.overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .55);
+
+    backdrop-filter: blur(2px);
+
+    z-index: 1;
+
+}
+
+/* ------------------------------
+   Main Content
+------------------------------ */
+
+.gateway-content {
+
+    position: relative;
+
+    z-index: 20;
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+/* ------------------------------
+   Hero
+------------------------------ */
+
+.hero {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+
+}
+
+.hero-subtitle {
+
+    color: #d6d6d6;
+
+    font-size: 20px;
+
+    margin-top: 20px;
+
+}
+
+/* ------------------------------
+   Main Map
+------------------------------ */
+
+.gateway-map {
+
+    display: grid;
+
+    grid-template-columns: 1fr 220px 1fr;
+
+    gap: 120px;
+
+    align-items: center;
+
+}

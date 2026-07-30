@@ -5,10 +5,10 @@
 
 {% block page_css %}
 
-{% block page_css %}
-<link rel="stylesheet" href="{% static 'css/auth.css' %}">
-<link rel="stylesheet" href="{% static 'css/signup.css' %}">
-{% endblock %}
+
+<link rel="stylesheet" href="{% static 'css/auth/auth.css' %}">
+<link rel="stylesheet" href="{% static 'css/auth/signup.css' %}">
+
 {% endblock %}
 
 {% block content %}
@@ -25,33 +25,13 @@
 
         {% csrf_token %}
 
-        <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            required
-        >
+        <input type="text" name="username" placeholder="Username" required>
 
-        <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            required
-        >
+        <input type="email" name="email" placeholder="Email Address" required>
 
-        <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            required
-        >
+        <input type="password" name="password" placeholder="Password" required>
 
-        <input
-            type="password"
-            name="confirm_password"
-            placeholder="Confirm Password"
-            required
-        >
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
 
         <button class="btn secondary">
             CREATE ACCOUNT

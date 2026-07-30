@@ -1,0 +1,258 @@
+/* ==========================================
+   Gateway Animations
+========================================== */
+
+/* ------------------------------
+   Orb Pulse
+------------------------------ */
+
+@keyframes orbPulse {
+
+    0% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.12);
+
+    }
+
+    100% {
+
+        transform: scale(1);
+
+    }
+
+}
+
+.magic-circle {
+
+    animation: orbPulse 2.8s ease-in-out infinite;
+
+}
+
+
+/* ------------------------------
+   Ring Rotation
+------------------------------ */
+
+@keyframes rotateClockwise {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+@keyframes rotateAntiClockwise {
+
+    from {
+
+        transform: rotate(360deg);
+
+    }
+
+    to {
+
+        transform: rotate(0deg);
+
+    }
+
+}
+
+.ring-1 {
+
+    animation: rotateClockwise 14s linear infinite;
+
+}
+
+.ring-2 {
+
+    animation: rotateAntiClockwise 20s linear infinite;
+
+}
+
+
+/* ------------------------------
+   Portal Floating
+------------------------------ */
+
+@keyframes portalFloat {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-12px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+.portal img {
+
+    animation: portalFloat 5s ease-in-out infinite;
+
+}
+
+
+/* ------------------------------
+   Hover Lift
+------------------------------ */
+
+.portal:hover {
+
+    transform: translateY(-12px);
+
+}
+
+
+/* ------------------------------
+   Orb Glow
+------------------------------ */
+
+@keyframes glowPulse {
+
+    0% {
+
+        opacity: .45;
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform: scale(1.12);
+
+    }
+
+    100% {
+
+        opacity: .45;
+
+        transform: scale(1);
+
+    }
+
+}
+
+.magic-glow {
+
+    animation: glowPulse 3s ease-in-out infinite;
+
+}
+
+
+/* ------------------------------
+   Hero Fade
+------------------------------ */
+
+@keyframes heroFade {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+.hero {
+
+    animation: heroFade 1.2s ease;
+
+}
+
+
+/* ------------------------------
+   Logo Breathing
+------------------------------ */
+
+@keyframes logoFloat {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-8px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+.logo {
+
+    animation: logoFloat 5s ease-in-out infinite;
+
+}
+
+
+/* ------------------------------
+   Subtitle Fade
+------------------------------ */
+
+@keyframes subtitleFade {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+.hero-subtitle {
+
+    animation: subtitleFade 2s ease;
+
+}

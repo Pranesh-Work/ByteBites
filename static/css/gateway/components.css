@@ -1,0 +1,187 @@
+/* ==========================================
+   Gateway Components
+========================================== */
+
+/* ------------------------------
+   Logo
+------------------------------ */
+
+.logo {
+
+    width: 430px;
+
+    max-width: 90%;
+
+    user-select: none;
+
+}
+
+/* ------------------------------
+   Hero
+------------------------------ */
+
+.hero h2 {
+
+    margin-top: 25px;
+
+    color: #ffffff;
+
+    font-size: 2.3rem;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+}
+
+.hero-subtitle {
+
+    color: #d5d5d5;
+
+    font-size: 1.15rem;
+
+}
+
+/* ------------------------------
+   Portal
+------------------------------ */
+
+.portal {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-decoration: none;
+
+}
+
+/* Portal Images */
+
+.portal img {
+
+    width: 300px;
+
+    user-select: none;
+
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, .55));
+
+}
+
+/* ------------------------------
+   Portal Titles
+------------------------------ */
+
+.portal-title {
+
+    margin-bottom: 30px;
+
+    padding: 18px 42px;
+
+    border-radius: 15px;
+
+    background: #232323;
+
+    color: #ffffff;
+
+    font-size: 1.35rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    border: 2px solid #666;
+
+    box-shadow: 0 0 18px rgba(0, 0, 0, .45);
+
+}
+
+/* ------------------------------
+   Magic Core
+------------------------------ */
+
+.magic-core {
+
+    position: relative;
+
+    width: 200px;
+
+    height: 200px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+/* Rings */
+
+.magic-ring {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(140, 170, 255, .45);
+
+}
+
+.ring-1 {
+
+    width: 160px;
+
+    height: 160px;
+
+}
+
+.ring-2 {
+
+    width: 200px;
+
+    height: 200px;
+
+}
+
+/* Orb */
+
+.magic-circle {
+
+    width: 110px;
+
+    height: 110px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(circle,
+            #9ab8ff,
+            #5b63ff,
+            #2d1fb5);
+
+    box-shadow:
+        0 0 25px #6175ff,
+        0 0 70px #566cff,
+        0 0 120px #4e58ff;
+
+}
+
+/* Glow */
+
+.magic-glow {
+
+    position: absolute;
+
+    width: 320px;
+
+    height: 320px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(circle,
+            rgba(90, 110, 255, .28),
+            transparent 70%);
+
+}

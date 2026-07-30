@@ -1,0 +1,165 @@
+/* ==========================================
+   Gateway Responsive Design
+========================================== */
+
+
+/* ==========================================
+   Large Tablets (1200px)
+========================================== */
+
+@media (max-width:1200px) {
+
+    .gateway-map {
+
+        gap: 80px;
+
+    }
+
+    .portal img {
+
+        width: 260px;
+
+    }
+
+    .logo {
+
+        width: 380px;
+
+    }
+
+}
+
+
+/* ==========================================
+   Tablets (992px)
+========================================== */
+
+@media (max-width:992px) {
+
+    .gateway-map {
+
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+
+    }
+
+    .magic-core {
+
+        display: none;
+
+    }
+
+    .portal img {
+
+        width: 240px;
+
+    }
+
+    .logo {
+
+        width: 330px;
+
+    }
+
+    .hero h2 {
+
+        font-size: 2rem;
+
+        letter-spacing: 4px;
+
+    }
+
+}
+
+
+/* ==========================================
+   Mobile (768px)
+========================================== */
+
+@media (max-width:768px) {
+
+    .gateway-page {
+
+        padding: 30px 20px;
+
+    }
+
+    .logo {
+
+        width: 260px;
+
+    }
+
+    .hero h2 {
+
+        font-size: 1.55rem;
+
+        letter-spacing: 2px;
+
+    }
+
+    .hero-subtitle {
+
+        font-size: 1rem;
+
+        padding: 0 20px;
+
+    }
+
+    .portal-title {
+
+        font-size: 1rem;
+
+        padding: 14px 28px;
+
+    }
+
+    .portal img {
+
+        width: 190px;
+
+    }
+
+}
+
+
+/* ==========================================
+   Small Phones (480px)
+========================================== */
+
+@media (max-width:480px) {
+
+    .logo {
+
+        width: 210px;
+
+    }
+
+    .hero h2 {
+
+        font-size: 1.2rem;
+
+    }
+
+    .hero-subtitle {
+
+        font-size: .9rem;
+
+    }
+
+    .portal-title {
+
+        font-size: .9rem;
+
+        padding: 12px 24px;
+
+    }
+
+    .portal img {
+
+        width: 160px;
+
+    }
+
+}

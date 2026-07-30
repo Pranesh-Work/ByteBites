@@ -1,0 +1,61 @@
+/* ==========================================
+   Hub Layout
+========================================== */
+
+body {
+
+    background: #08131d;
+
+    color: white;
+
+    overflow-x: hidden;
+
+}
+
+.hub-page {
+
+    min-height: 100vh;
+
+    padding: 40px 7%;
+
+}
+
+/* Hero */
+
+.hub-hero {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 50px;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+}
+
+.hero-left h1{
+
+    font-size:48px;
+
+    margin:0;
+
+}
+
+.hero-left p{
+
+    color:#c8d3dd;
+
+    margin-top:12px;
+
+}
+
+.logout-btn{
+
+    padding:15px 30px;
+
+}

@@ -1,0 +1,121 @@
+/* ==========================================
+   ByteBites Hub Responsive
+========================================== */
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 992px) {
+
+    .hub-page {
+
+        padding: 35px 6%;
+
+    }
+
+    .hub-hero {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+    }
+
+    .hero-left h1 {
+
+        font-size: 40px;
+
+    }
+
+    .vendor-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
+
+    .hub-page {
+
+        padding: 25px 20px;
+
+    }
+
+    .hero-left h1 {
+
+        font-size: 32px;
+
+    }
+
+    .hero-left p {
+
+        font-size: 15px;
+
+    }
+
+    .search-bar input {
+
+        font-size: 16px;
+
+        padding: 15px 20px;
+
+    }
+
+    .category-filter {
+
+        justify-content: flex-start;
+
+    }
+
+    .vendor-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .vendor-card {
+
+        padding: 25px;
+
+    }
+
+    .vendor-image {
+
+        width: 100px;
+
+    }
+
+}
+
+/* ---------- Small Phones ---------- */
+
+@media (max-width: 480px) {
+
+    .hero-left h1 {
+
+        font-size: 28px;
+
+    }
+
+    .category-btn {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+    .logout-btn {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+}

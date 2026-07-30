@@ -1,29 +1,151 @@
 {% extends 'base.html' %}
-{% block content %}
-<div class="hub-header">
-    <div>
-        <h1>Welcome To ByteBites</h1>
-        <p>Choose your next campus quest, {{ user.username }}!</p>
-    </div>
-    <div class="role-action">
-        {% if user.is_staff or user.profile.role == 'ADMIN' %}
-            <a class="btn danger" href="{% url 'admin_panel' %}">⚔ Admin Panel</a>
-        {% elif user.profile.role == 'EMPLOYEE' %}
-            <a class="btn secondary" href="{% url 'ticket_center' %}">🎟 Ticket Center</a>
-        {% endif %}
-    </div>
-</div>
+{% load static %}
 
-<div class="map-grid">
-    {% for vendor in vendors %}
-    <a href="{% url 'vendor_detail' vendor.slug %}" class="vendor-card">
-        <div class="vendor-icon">🏰</div>
-        <h2>{{ vendor.name }}</h2>
-        <p>{{ vendor.description }}</p>
-        <span>ENTER QUEST →</span>
-    </a>
-    {% empty %}
-    <p>No vendors added yet. Use Django Admin to add Royal Kitchen, Mario, Campus Kitchen and Tasty Time.</p>
-    {% endfor %}
-</div>
+{% block page_css %}
+
+<link rel="stylesheet" href="{% static 'css/hub/hub.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<section class="hub-page">
+
+    <!-- ==========================================
+         Hero Section
+    ========================================== -->
+
+    <section class="hub-hero">
+
+        <div class="hero-left">
+
+            <h1>
+                Welcome Back,
+                {{ user.username }}
+            </h1>
+
+            <p>
+                Choose your next campus food adventure.
+            </p>
+
+        </div>
+
+        <div class="hero-right">
+
+            {% if user.is_staff or user.profile.role == 'ADMIN' %}
+
+                <a href="{% url 'admin_panel' %}" class="btn danger logout-btn">
+                    Admin Panel
+                </a>
+
+            {% elif user.profile.role == 'EMPLOYEE' %}
+
+                <a href="{% url 'ticket_center' %}" class="btn secondary logout-btn">
+                    Ticket Center
+                </a>
+
+            {% endif %}
+
+            <a href="{% url 'logout' %}" class="btn primary logout-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         Search
+    ========================================== -->
+
+    <div class="search-bar">
+
+        <input
+            type="text"
+            placeholder="🔍 Search vendors..."
+        >
+
+    </div>
+
+
+    <!-- ==========================================
+         Categories
+    ========================================== -->
+
+    <div class="category-filter">
+
+        <div class="category-btn">All</div>
+
+        <div class="category-btn">Meals</div>
+
+        <div class="category-btn">Snacks</div>
+
+        <div class="category-btn">Drinks</div>
+
+        <div class="category-btn">Desserts</div>
+
+    </div>
+
+
+    <!-- ==========================================
+         Vendors
+    ========================================== -->
+
+    <section class="vendor-grid">
+
+        {% for vendor in vendors %}
+
+        <a href="{% url 'vendor_detail' vendor.slug %}" class="vendor-card">
+
+            <div class="vendor-image">
+
+                <img src="{% static 'images/vendors/default/vendor.webp' %}" alt="Vendor">
+
+            </div>
+
+            <h2>
+
+                {{ vendor.name }}
+
+            </h2>
+
+            <p>
+
+                {{ vendor.description }}
+
+            </p>
+
+            <span class="vendor-btn">
+
+                Enter Shop →
+
+            </span>
+
+        </a>
+
+        {% empty %}
+
+        <div class="vendor-card">
+
+            <h2>
+
+                No Vendors Found
+
+            </h2>
+
+            <p>
+
+                Add vendors from Django Admin.
+
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </section>
+
+</section>
+
 {% endblock %}

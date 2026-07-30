@@ -1,0 +1,61 @@
+/* ==========================================
+   Vendor Card
+========================================== */
+
+.vendor-card{
+
+    background:#172432;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.vendor-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.vendor-image{
+
+    width:120px;
+
+    margin:auto;
+
+    margin-bottom:20px;
+
+}
+
+.vendor-image img{
+
+    width:100%;
+
+}
+
+.vendor-card h2{
+
+    margin:15px 0;
+
+}
+
+.vendor-card p{
+
+    color:#cbd5de;
+
+}
+
+.vendor-btn{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+}

@@ -1,0 +1,157 @@
+/* ===========================================
+   ByteBites Login Page
+   Login Specific Styles
+=========================================== */
+
+/* ===========================================
+   Login Card Animation
+=========================================== */
+
+.auth-card {
+
+    animation: loginFadeUp .8s ease;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.auth-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, .45);
+
+}
+
+/* ===========================================
+   Login Heading
+=========================================== */
+
+.auth-card h1 {
+
+    font-size: 3rem;
+
+    margin-bottom: 12px;
+
+    color: #ffffff;
+
+}
+
+/* ===========================================
+   Login Button
+=========================================== */
+
+.auth-card .btn {
+
+    width: 100%;
+
+    padding: 15px;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    color: #111111;
+
+    background: linear-gradient(
+        135deg,
+        #f8bb45,
+        #e18d1a
+    );
+
+    box-shadow:
+        0 10px 25px rgba(241,162,55,.35);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        filter .25s ease;
+
+}
+
+.auth-card .btn:hover {
+
+    transform: translateY(-2px);
+
+    filter: brightness(1.05);
+
+    box-shadow:
+        0 16px 35px rgba(241,162,55,.55);
+
+}
+
+.auth-card .btn:active {
+
+    transform: scale(.98);
+
+}
+
+/* ===========================================
+   Login Links
+=========================================== */
+
+.auth-links a,
+
+.switch-auth a {
+
+    transition:
+        color .25s ease,
+        text-shadow .25s ease;
+
+}
+
+.auth-links a:hover,
+
+.switch-auth a:hover {
+
+    color: #ffd27a;
+
+    text-shadow:
+        0 0 10px rgba(255,210,122,.45);
+
+}
+
+/* ===========================================
+   Login Input Icons (Future Ready)
+=========================================== */
+
+.auth-card input {
+
+    position: relative;
+
+}
+
+/* ===========================================
+   Animation
+=========================================== */
+
+@keyframes loginFadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
