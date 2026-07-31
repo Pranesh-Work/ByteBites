@@ -1,0 +1,225 @@
+/* ==========================================
+   Vendor Card
+========================================== */
+
+.vendor-card {
+
+    background: #172432;
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    transition: .35s;
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+}
+
+.vendor-card:hover {
+
+    transform: translateY(-10px);
+
+}
+
+.vendor-image {
+
+    width: 120px;
+
+    margin: auto;
+
+    margin-bottom: 20px;
+
+}
+
+.vendor-image img {
+
+    width: 100%;
+
+}
+
+.vendor-card h2 {
+
+    margin: 15px 0;
+
+}
+
+.vendor-card p {
+
+    color: #cbd5de;
+
+}
+
+/* ==========================================
+   Enter Shop Button
+========================================== */
+
+.vendor-btn {
+
+    margin-top: 25px;
+
+    width: 100%;
+
+    text-align: center;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background: linear-gradient(135deg,
+            #f3a73b,
+            #d98c17);
+
+    color: #111;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    transition: .3s;
+
+}
+
+.vendor-card:hover .vendor-btn {
+
+    transform: scale(1.02);
+
+}
+
+/* ==========================================
+   Vendor Header
+========================================== */
+
+.vendor-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+
+    gap: 15px;
+
+}
+
+.vendor-header h2 {
+
+    margin: 0;
+
+    font-size: 1.5rem;
+
+    color: #ffffff;
+
+}
+
+/* ==========================================
+   Status Badge
+========================================== */
+
+.status-badge {
+
+    padding: 7px 14px;
+
+    border-radius: 50px;
+
+    font-size: .82rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+}
+
+/* OPEN */
+
+.status-badge.open {
+
+    background: rgba(40, 180, 90, .18);
+
+    color: #45ff8b;
+
+    border: 1px solid rgba(69, 255, 139, .45);
+
+}
+
+/* CLOSED */
+
+.status-badge.closed {
+
+    background: rgba(255, 80, 80, .15);
+
+    color: #ff6d6d;
+
+    border: 1px solid rgba(255, 90, 90, .45);
+
+}
+
+/* ==========================================
+   Vendor Information
+========================================== */
+
+.vendor-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 18px 0;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    font-size: .95rem;
+
+    color: #d7dde6;
+
+}
+
+.vendor-info span {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+}
+
+/* ==========================================
+   Price
+========================================== */
+
+.vendor-price {
+
+    margin: 18px 0;
+
+    font-size: 1.3rem;
+
+    font-weight: bold;
+
+    color: #f3a73b;
+
+}
+
+/* ==========================================
+   Description
+========================================== */
+
+.vendor-description {
+
+    color: #bfcbd8;
+
+    line-height: 1.7;
+
+    min-height: 60px;
+
+}

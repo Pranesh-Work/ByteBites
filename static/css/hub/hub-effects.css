@@ -2,28 +2,194 @@
    ByteBites Hub Effects
 ========================================== */
 
-/* ------------------------------
-   Vendor Card Hover
------------------------------- */
+/* ==========================================
+   Premium Glass Vendor Card
+========================================== */
 
 .vendor-card {
 
+    position: relative;
+
+    overflow: hidden;
+
+    background: rgba(24, 34, 46, .72);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    border-radius: 26px;
+
     transition:
-        transform .35s ease,
-        box-shadow .35s ease,
-        border-color .35s ease;
+        transform .45s ease,
+        box-shadow .45s ease,
+        border-color .45s ease;
 
 }
 
+/* ==========================================
+   Vendor Hover Glow
+========================================== */
+
 .vendor-card:hover {
 
-    transform: translateY(-10px);
+    transform:
+
+        perspective(900px) rotateX(4deg) rotateY(-3deg) translateY(-12px) scale(1.02);
 
     border-color: rgba(243, 167, 59, .45);
 
     box-shadow:
-        0 20px 45px rgba(0, 0, 0, .35),
-        0 0 25px rgba(243, 167, 59, .18);
+
+        0 25px 60px rgba(0, 0, 0, .45),
+
+        0 0 35px rgba(243, 167, 59, .18);
+
+}
+
+/* ==========================================
+   Floating Image
+========================================== */
+
+.vendor-image img {
+
+    transition:
+
+        transform .45s ease,
+
+        filter .45s ease;
+
+}
+
+.vendor-card:hover .vendor-image img {
+
+    transform:
+
+        translateY(-10px) scale(1.06);
+
+    filter:
+
+        drop-shadow(0 15px 30px rgba(243, 167, 59, .25));
+
+}
+
+/* ==========================================
+   Shine Animation
+========================================== */
+
+.vendor-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -140%;
+
+    width: 70%;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(110deg,
+
+            transparent,
+
+            rgba(255, 255, 255, .18),
+
+            transparent);
+
+    transform: skewX(-25deg);
+
+}
+
+.vendor-card:hover::before {
+
+    animation: vendorShine .9s;
+
+}
+
+@keyframes vendorShine {
+
+    to {
+
+        left: 170%;
+
+    }
+
+}
+
+/* ==========================================
+   Status Pulse
+========================================== */
+
+.status-badge.open {
+
+    animation: statusPulse 2s infinite;
+
+}
+
+@keyframes statusPulse {
+
+    0% {
+
+        box-shadow: 0 0 0 rgba(69, 255, 139, .45);
+
+    }
+
+    50% {
+
+        box-shadow:
+
+            0 0 18px rgba(69, 255, 139, .45);
+
+    }
+
+    100% {
+
+        box-shadow: 0 0 0 rgba(69, 255, 139, .45);
+
+    }
+
+}
+
+/* ==========================================
+   Vendor Fade
+========================================== */
+
+.vendor-card {
+
+    animation:
+
+        vendorFade .7s ease;
+
+}
+
+@keyframes vendorFade {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+
+            translateY(45px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+
+            translateY(0);
+
+    }
 
 }
 
@@ -33,11 +199,11 @@
 
 .search-bar input {
 
-    background: rgba(255,255,255,.08);
+    background: rgba(255, 255, 255, .08);
 
     color: white;
 
-    border: 1px solid rgba(255,255,255,.12);
+    border: 1px solid rgba(255, 255, 255, .12);
 
     transition: .3s;
 
@@ -45,7 +211,7 @@
 
 .search-bar input::placeholder {
 
-    color: rgba(255,255,255,.55);
+    color: rgba(255, 255, 255, .55);
 
 }
 
@@ -55,7 +221,7 @@
 
     border-color: #f3a73b;
 
-    box-shadow: 0 0 18px rgba(243,167,59,.25);
+    box-shadow: 0 0 18px rgba(243, 167, 59, .25);
 
 }
 
@@ -75,7 +241,7 @@
 
     transform: translateY(-3px);
 
-    box-shadow: 0 8px 18px rgba(243,167,59,.25);
+    box-shadow: 0 8px 18px rgba(243, 167, 59, .25);
 
 }
 
@@ -89,11 +255,9 @@
 
     border-radius: 30px;
 
-    background: linear-gradient(
-        135deg,
-        #f3a73b,
-        #d88c1e
-    );
+    background: linear-gradient(135deg,
+            #f3a73b,
+            #d88c1e);
 
     color: #111;
 
@@ -107,7 +271,7 @@
 
     transform: scale(1.05);
 
-    box-shadow: 0 12px 24px rgba(243,167,59,.35);
+    box-shadow: 0 12px 24px rgba(243, 167, 59, .35);
 
 }
 
