@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_css %}
+
+<link rel="stylesheet" href="{% static 'css/hub/hub.css' %}">
+<style>
+    body {
+        background: url('{% static "images/backgrounds/hub-bg.webp" %}') no-repeat center center fixed;
+        background-size: cover;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section class="hub-page">
+
+    <!-- ==========================================
+         Hero Section
+    ========================================== -->
+
+    <section class="hub-hero">
+
+        <div class="hero-left">
+
+            <h1>
+                Welcome Back,
+                {{ user.username }}
+            </h1>
+
+            <p>
+                Choose your next campus food adventure.
+            </p>
+
+        </div>
+
+        <div class="hero-right">
+
+            {% if user.is_staff or user.profile.role == 'ADMIN' %}
+
+            <a href="{% url 'admin_panel' %}" class="btn danger logout-btn">
+                Admin Panel
+            </a>
+
+            {% elif user.profile.role == 'EMPLOYEE' %}
+
+            <a href="{% url 'ticket_center' %}" class="btn secondary logout-btn">
+                Ticket Center
+            </a>
+
+            {% endif %}
+
+            <a href="{% url 'logout' %}" class="btn primary logout-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         Search
+    ========================================== -->
+
+    <div class="search-bar">
+
+        <input type="text" placeholder="🔍 Search vendors...">
+
+    </div>
+
+
+    <!-- ==========================================
+         Categories
+    ========================================== -->
+
+    <div class="category-filter">
+
+        <div class="category-btn">All</div>
+
+        <div class="category-btn">Meals</div>
+
+        <div class="category-btn">Snacks</div>
+
+        <div class="category-btn">Drinks</div>
+
+        <div class="category-btn">Desserts</div>
+
+    </div>
+
+
+    <!-- ==========================================
+         Vendors
+    ========================================== -->
+
+    <section class="vendor-grid">
+
+        {% for vendor in vendors %}
+
+        <a href="{% url 'vendor_detail' vendor.slug %}" class="vendor-card {{ vendor.slug }}">
+
+            <!-- Vendor Image -->
+
+            <div class="vendor-image">
+
+                {% if vendor.image %}
+
+                <img src="{{ vendor.image.url }}" alt="{{ vendor.name }}">
+
+                {% else %}
+
+                <img src="{% static 'images/vendors/default/logo.webp' %}" alt="Vendor">
+
+                {% endif %}
+
+            </div>
+
+            <!-- Header -->
+
+            <div class="vendor-header">
+
+                <h2 class="vendor-name">
+
+                    {{ vendor.name }}
+
+                </h2>
+
+                {% if vendor.is_active %}
+
+                <span class="status-badge open">
+
+                    ● OPEN
+
+                </span>
+
+                {% else %}
+
+                <span class="status-badge closed">
+
+                    ● CLOSED
+
+                </span>
+
+                {% endif %}
+
+            </div>
+
+            <!-- Vendor Info -->
+
+            <div class="vendor-info">
+
+                <span>
+
+                    ⭐ {{ vendor.rating }}
+
+                </span>
+
+                <span>
+
+                    ⏱ {{ vendor.estimated_wait }} mins
+
+                </span>
+
+                <span>
+
+                    📍 {{ vendor.venue }}
+
+                </span>
+
+            </div>
+
+            <!-- Price -->
+
+            <div class="vendor-price">
+
+                ₹{{ vendor.minimum_price }}
+
+                -
+
+                ₹{{ vendor.maximum_price }}
+
+            </div>
+
+            <!-- Description -->
+
+            <p class="vendor-description">
+
+                {{ vendor.description }}
+
+            </p>
+
+            <!-- Button -->
+
+            <div class="vendor-btn">
+
+                ENTER SHOP →
+
+            </div>
+
+        </a>
+
+        {% empty %}
+
+        <div class="vendor-card">
+
+            <h2>
+
+                No Vendors Found
+
+            </h2>
+
+            <p>
+
+                Add vendors from Django Admin.
+
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </section>
+
+</section>
+
+{% endblock %}

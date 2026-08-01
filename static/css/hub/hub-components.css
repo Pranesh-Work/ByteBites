@@ -2,80 +2,229 @@
    Search Bar
 ========================================== */
 
-.search-bar{
-
-    width:100%;
-
-    max-width:700px;
-
-    margin:35px auto;
-
+.search-bar {
+    width: 100%;
+    max-width: 700px;
+    margin: 35px auto;
 }
 
-.search-bar input{
-
-    width:100%;
-
-    padding:18px 25px;
-
-    border-radius:50px;
-
-    border:none;
-
-    font-size:18px;
-
+.search-bar input {
+    width: 100%;
+    padding: 18px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
 }
 
 /* ==========================================
    Categories
 ========================================== */
 
-.category-filter{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-
-    margin-bottom:50px;
-
+.category-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
 }
 
-.category-btn{
-
-    padding:12px 28px;
-
-    border-radius:40px;
-
-    background:#24384b;
-
-    cursor:pointer;
-
-    transition:.3s;
-
+.category-btn {
+    padding: 12px 28px;
+    background: #24384b;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: .3s;
 }
 
-.category-btn:hover{
-
-    background:#f3a73b;
-
-    color:#111;
-
+.category-btn:hover {
+    background: #f3a73b;
+    color: #111;
 }
 
 /* ==========================================
    Vendor Grid
 ========================================== */
 
-.vendor-grid{
+.vendor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+}
 
-    display:grid;
+/* ==========================================
+   Vendor Card
+========================================== */
 
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+.vendor-card {
 
-    gap:35px;
+    display: flex;
+
+    flex-direction: column;
+
+    text-decoration: none;
+
+    color: white;
+
+    background: rgba(20, 28, 40, .75);
+
+    backdrop-filter: blur(18px);
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    transition: .35s;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+}
+
+.vendor-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+/* ==========================================
+   Vendor Image
+========================================== */
+
+.vendor-image {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+}
+
+.vendor-image img {
+
+    width: 140px;
+
+    height: 140px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+}
+
+/* ==========================================
+   Vendor Header
+========================================== */
+
+.vendor-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+
+}
+
+.vendor-name {
+
+    font-size: 26px;
+
+    font-weight: 700;
+
+}
+
+.status-badge {
+
+    padding: 6px 14px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+}
+
+.status-badge.open {
+
+    background: #19b863;
+
+}
+
+.status-badge.closed {
+
+    background: #d64242;
+
+}
+
+/* ==========================================
+   Vendor Info
+========================================== */
+
+.vendor-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin: 18px 0;
+
+    color: #d0d0d0;
+
+    font-size: 14px;
+
+}
+
+/* ==========================================
+   Price
+========================================== */
+
+.vendor-price {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #f3a73b;
+
+    margin-bottom: 15px;
+
+}
+
+/* ==========================================
+   Description
+========================================== */
+
+.vendor-description {
+
+    color: #d4d4d4;
+
+    line-height: 1.6;
+
+    flex: 1;
+
+}
+
+/* ==========================================
+   Button
+========================================== */
+
+.vendor-btn {
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: #f3a73b;
+
+    color: #111;
+
+    text-align: center;
+
+    font-weight: 700;
 
 }

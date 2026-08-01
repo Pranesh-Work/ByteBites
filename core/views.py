@@ -183,12 +183,22 @@ def logout_view(request):
 @login_required
 def hub(request):
     vendors = Vendor.objects.all()
-    return render(request, "hub.html", {"vendors": vendors})
+    return render(request, "hub/hub.html", {"vendors": vendors})
 
 @login_required
 def vendor_detail(request, slug):
     vendor = get_object_or_404(Vendor, slug=slug)
-    return render(request, "vendor_detail.html", {"vendor": vendor})
+    if vendor.slug == "campus-kitchen":
+        template_name = "vendor/campus-kitchen/campus-kitchen.html"
+    elif vendor.slug == "mario":
+        template_name = "vendor/mario/mario.html"
+    elif vendor.slug == "royal-kitchen":
+        template_name = "vendor/royal-kitchen/royal-kitchen.html"
+    elif vendor.slug == "tasty-time":
+        template_name = "vendor/tasty-time/tasty-time.html"
+    else:
+        template_name = "vendor/default.html"
+    return render(request, template_name, {"vendor": vendor})
 
 @login_required
 def product_list(request, vendor_slug, category_name):
@@ -228,7 +238,7 @@ def cart(request):
 
     return render(
         request,
-        "cart.html",
+        "cart/cart.html",
         {
             "cart": cart,
             "items": items,

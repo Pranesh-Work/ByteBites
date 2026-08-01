@@ -304,3 +304,153 @@
     }
 
 }
+
+/* ==========================================
+   Royal Kitchen
+========================================== */
+
+.royal-kitchen {
+
+    border-color: rgba(255, 205, 90, .22);
+
+}
+
+.royal-kitchen:hover {
+
+    box-shadow:
+
+        0 0 40px rgba(255, 210, 70, .30),
+
+        0 25px 60px rgba(0, 0, 0, .45);
+
+}
+
+.royal-kitchen .vendor-name {
+
+    color: #FFD65A;
+
+}
+
+.royal-kitchen .vendor-btn {
+
+    background: linear-gradient(135deg,
+
+            #FFD65A,
+
+            #E7A81A);
+
+}
+
+/* ==========================================
+   Mario
+========================================== */
+
+.mario {
+
+    border-color: rgba(255, 90, 90, .20);
+
+}
+
+.mario:hover {
+
+    box-shadow:
+
+        0 0 40px rgba(255, 70, 70, .28),
+
+        0 25px 60px rgba(0, 0, 0, .45);
+
+}
+
+.mario .vendor-name {
+
+    color: #ff6565;
+
+}
+
+.mario .vendor-btn {
+
+    background:
+
+        linear-gradient(135deg,
+
+            #ff5656,
+
+            #2cb84d);
+
+}
+
+/* ==========================================
+   Campus Kitchen
+========================================== */
+
+.campus-kitchen {
+
+    border-color: rgba(80, 170, 255, .22);
+
+}
+
+.campus-kitchen:hover {
+
+    box-shadow:
+
+        0 0 40px rgba(90, 170, 255, .30),
+
+        0 25px 60px rgba(0, 0, 0, .45);
+
+}
+
+.campus-kitchen .vendor-name {
+
+    color: #72c3ff;
+
+}
+
+.campus-kitchen .vendor-btn {
+
+    background:
+
+        linear-gradient(135deg,
+
+            #53AFFF,
+
+            #2A79FF);
+
+}
+
+/* ==========================================
+   Tasty Time
+========================================== */
+
+.tasty-time {
+
+    border-color: rgba(194, 92, 255, .22);
+
+}
+
+.tasty-time:hover {
+
+    box-shadow:
+
+        0 0 40px rgba(194, 92, 255, .35),
+
+        0 25px 60px rgba(0, 0, 0, .45);
+
+}
+
+.tasty-time .vendor-name {
+
+    color: #D18EFF;
+
+}
+
+.tasty-time .vendor-btn {
+
+    background:
+
+        linear-gradient(135deg,
+
+            #D18EFF,
+
+            #8A54FF);
+
+}

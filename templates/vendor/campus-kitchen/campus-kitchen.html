@@ -1,0 +1,19 @@
+{% extends 'vendor/components/vendor-common.html' %}
+{% load static %}
+
+{% block vendor_css %}
+<link rel="stylesheet" href="{% static 'css/vendor/campus-kitchen/campus-kitchen.css' %}?v=3">
+<link rel="stylesheet" href="{% static 'css/vendor/campus-kitchen/campus-effects.css' %}">
+<link rel="stylesheet" href="{% static 'css/vendor/campus-kitchen/campus-animations.css' %}">
+{% endblock %}
+
+{% block body_class %}campus-kitchen-page{% endblock %}
+
+{% block vendor_js %}
+<script src="{% static 'js/vendor/campus-kitchen/campus.js' %}"></script>
+{% endblock %}
+
+{% block vendor_content %}
+{% include 'vendor/components/vendor-header.html' %}
+{% include 'vendor/components/category-card.html' %}
+{% endblock %}

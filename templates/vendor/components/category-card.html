@@ -1,0 +1,13 @@
+<div class="category-grid">
+    {% for category in vendor.categories.all %}
+    <a class="category-card" href="{% url 'product_list' vendor.slug category.name %}">
+        <h2>{{ category.name }}</h2>
+        <p>Explore {{ category.name }} →</p>
+    </a>
+    {% empty %}
+    <div class="category-card">
+        <h2>No Categories</h2>
+        <p>This vendor has no categories yet.</p>
+    </div>
+    {% endfor %}
+</div>

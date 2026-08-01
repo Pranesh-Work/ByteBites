@@ -1,0 +1,19 @@
+{% extends 'vendor/components/vendor-common.html' %}
+{% load static %}
+
+{% block vendor_css %}
+<link rel="stylesheet" href="{% static 'css/vendor/royal-kitchen/royal.css' %}?v=3">
+<link rel="stylesheet" href="{% static 'css/vendor/royal-kitchen/royal-effects.css' %}">
+<link rel="stylesheet" href="{% static 'css/vendor/royal-kitchen/royal-animations.css' %}">
+{% endblock %}
+
+{% block body_class %}royal-kitchen-page{% endblock %}
+
+{% block vendor_js %}
+<script src="{% static 'js/vendor/royal-kitchen/royal.js' %}"></script>
+{% endblock %}
+
+{% block vendor_content %}
+{% include 'vendor/components/vendor-header.html' %}
+{% include 'vendor/components/category-card.html' %}
+{% endblock %}
